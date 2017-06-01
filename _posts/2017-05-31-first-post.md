@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 开博
+title: 开博啦！
 subtitle: 坚持写作
 bigimg: /img/path.jpg
 ---
