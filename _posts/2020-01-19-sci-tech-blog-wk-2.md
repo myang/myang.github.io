@@ -14,6 +14,6 @@ tags: Science，Technology
 2. Planty Cube: vertical farming
 韩国 n.thing 展示了一种节能环保的精细立体种植技术，可以按客户需求定制蔬菜。无需传统的循环灌溉和施肥系统，依据大量传感器的实时数据，按每株植物的实际需要供水施肥。公司的愿景是：2025年上火星，2030年为火星上的人类提供绿色食物。![](../img/599e401cbe35ceecc830c99fb078b924.png)
 
-Hydraloop: compact water cycling system
+3. Hydraloop: compact water cycling system
 位于荷兰的 [Hydraloop ](https://www.hydraloop.com)公司一直致力于低成本的家用回收净化水技术的研发。这次在CES2020消费电子展上，他们拿出了最新的产品，可以循环利用95%洗澡水，和50%洗衣机的水。同时冬天时，热水的热量还会回收用于加热房间。![](../img/358c603d09b216e46b0a795249cd4bbc.png)
 
