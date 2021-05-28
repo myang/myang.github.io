@@ -4,5 +4,5 @@ title: About me
 subtitle: 
 ---
 
-My name is Mu Yang. I love science.
+My name is Eric Yang. I love science.
 
