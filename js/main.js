@@ -62,6 +62,15 @@ var main = {
       fakeMenu.remove();
     }        
     
+    // Daily news toggle
+    $(".daily-news-toggle").on("click", function() {
+      var item = $(this).closest(".daily-news-item");
+      var isExpanded = item.hasClass("is-expanded");
+      item.toggleClass("is-expanded");
+      $(this).attr("aria-expanded", String(!isExpanded));
+      $(this).text(isExpanded ? "展开" : "收起");
+    });
+
     // show the big header image	
     main.initImgs();
   },

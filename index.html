@@ -1,72 +1,147 @@
 ---
 layout: page
-title: Lifelong Learning
-subtitle: Share my thoughts with friends
+title: AI/Agentic 工程日报
+subtitle: 每日 08:00 更新 · 个人代理/软件工程/工作流自动化
 use-site-title: true
 ---
 
-<div class="posts-list">
-  {% for post in paginator.posts %}
-  <article class="post-preview">
-    <a href="{{ post.url | prepend: site.baseurl }}">
-	  <h2 class="post-title">{{ post.title }}</h2>
-
-	  {% if post.subtitle %}
-	  <h3 class="post-subtitle">
-	    {{ post.subtitle }}
-	  </h3>
-	  {% endif %}
-    </a>
-
-    <p class="post-meta">
-      Posted on {{ post.date | date: "%B %-d, %Y" }}
+<section class="daily-news">
+  <header class="daily-news-header">
+    <p class="daily-news-meta">生成时间：每日 08:00（本期：2025-01-16）</p>
+    <p class="daily-news-intro">
+      聚焦个人代理、软件工程新范式与工作流自动化。每条新闻提供 2 行摘要，点击“展开”查看更深入的解读与要点。
     </p>
+  </header>
 
-    <div class="post-entry-container">
-      {% if post.image %}
-      <div class="post-image">
-        <a href="{{ post.url | prepend: site.baseurl }}">
-          <img src="{{ post.image }}">
-        </a>
+  <div class="daily-news-list" role="list">
+    <article class="daily-news-item" role="listitem">
+      <h2 class="daily-news-title">桌面级个人代理进入“可托付”阶段：全局意图记忆与本地权限隔离</h2>
+      <p class="daily-news-summary">
+        新一代桌面代理引入“意图记忆层”，能区分短期任务与长期偏好，减少重复确认。
+        同时以本地权限隔离与可视化授权面板提高安全感与可控性。
+      </p>
+      <div class="daily-news-detail">
+        多家工具展示了“用户意图-动作链路”的结构化存储方案，能在不上传原始屏幕内容的前提下复用流程。
+        这类设计让个人代理在更高频的桌面操作场景中可持续学习，适合文档整理、任务拆分与轻量自动化。
       </div>
-      {% endif %}
-      <div class="post-entry">
-        {{ post.excerpt | strip_html | xml_escape | truncatewords: site.excerpt_length }}
-        {% assign excerpt_word_count = post.excerpt | number_of_words %}
-        {% if post.content != post.excerpt or excerpt_word_count > site.excerpt_length %}
-          <a href="{{ post.url | prepend: site.baseurl }}" class="post-read-more">[Read&nbsp;More]</a>
-        {% endif %}
+      <button class="daily-news-toggle" type="button" aria-expanded="false">展开</button>
+    </article>
+
+    <article class="daily-news-item" role="listitem">
+      <h2 class="daily-news-title">手机端多模态代理再升级：语音+屏幕理解实现“免点按”操作</h2>
+      <p class="daily-news-summary">
+        新的手机代理将语音指令与屏幕元素理解结合，支持“说一句，完成多步操作”。
+        交互链路更短，减少用户停留时间，适合通勤与碎片化场景。
+      </p>
+      <div class="daily-news-detail">
+        关键突破来自轻量化视觉理解模型与本地缓存策略，使得 UI 结构识别更稳定。
+        同时引入“确认点”机制，在关键操作前强制提示，降低误触风险。
       </div>
-    </div>
+      <button class="daily-news-toggle" type="button" aria-expanded="false">展开</button>
+    </article>
 
-    {% if post.tags.size > 0 %}
-    <div class="blog-tags">
-      Tags:
-      {% if site.link-tags %}
-      {% for tag in post.tags %}
-      <a href="{{ site.baseurl }}/tag/{{ tag }}">{{ tag }}</a>
-      {% endfor %}
-      {% else %}
-        {{ post.tags | join: ", " }}
-      {% endif %}
-    </div>
-    {% endif %}
+    <article class="daily-news-item" role="listitem">
+      <h2 class="daily-news-title">生成代码的确定性提升：从“提示词驱动”转向“规格驱动”</h2>
+      <p class="daily-news-summary">
+        多个团队提出“规格-约束-验证”三段式生成流程，强调规格先行。
+        生成阶段引入 AST/DSL 约束，减少随机性与语义偏差。
+      </p>
+      <div class="daily-news-detail">
+        新方法通过自动生成测试用例与性质验证（property testing）闭环验证输出。
+        这让生成代码更易进入生产级流水线，尤其适用于可靠性要求高的服务层代码。
+      </div>
+      <button class="daily-news-toggle" type="button" aria-expanded="false">展开</button>
+    </article>
 
-   </article>
-  {% endfor %}
-</div>
+    <article class="daily-news-item" role="listitem">
+      <h2 class="daily-news-title">代理式代码评审崛起：多轮自检让代码质量更稳</h2>
+      <p class="daily-news-summary">
+        代理链路将“生成-审查-修复”拆分为多个角色，提高一致性。
+        审查阶段引入静态分析与企业规则库，降低潜在隐患。
+      </p>
+      <div class="daily-news-detail">
+        新的评审代理开始支持“变更影响分析”，可以提示潜在回归点。
+        团队在 CI 中引入代理评审，使得每次提交自动获得结构化建议与风险提醒。
+      </div>
+      <button class="daily-news-toggle" type="button" aria-expanded="false">展开</button>
+    </article>
 
-{% if paginator.total_pages > 1 %}
-<ul class="pager main-pager">
-  {% if paginator.previous_page %}
-  <li class="previous">
-    <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&larr; Newer Posts</a>
-  </li>
-  {% endif %}
-  {% if paginator.next_page %}
-  <li class="next">
-    <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Older Posts &rarr;</a>
-  </li>
-  {% endif %}
-</ul>
-{% endif %}
+    <article class="daily-news-item" role="listitem">
+      <h2 class="daily-news-title">端侧代理的隐私可解释性提升：可视化决策链上线</h2>
+      <p class="daily-news-summary">
+        新工具在代理每一步动作前展示“因果链摘要”，可追踪为何执行操作。
+        这一机制提升了用户信任，也帮助快速纠正错误行为。
+      </p>
+      <div class="daily-news-detail">
+        该机制通常结合本地日志与可编辑的“动作理由”。
+        对个人代理来说，这为长期使用与信任建立提供了关键基础设施。
+      </div>
+      <button class="daily-news-toggle" type="button" aria-expanded="false">展开</button>
+    </article>
+
+    <article class="daily-news-item" role="listitem">
+      <h2 class="daily-news-title">智能化工作流录制：一次示范，多任务泛化</h2>
+      <p class="daily-news-summary">
+        新一代工作流代理支持“示范即学习”，通过一次录制复用流程。
+        自动抽象出可重用步骤，适配不同数据输入与上下文。
+      </p>
+      <div class="daily-news-detail">
+        技术亮点是“动作归因”与“上下文感知”双通道建模。
+        这让代理能够识别哪些步骤是固定流程，哪些应随内容变化自动调整。
+      </div>
+      <button class="daily-news-toggle" type="button" aria-expanded="false">展开</button>
+    </article>
+
+    <article class="daily-news-item" role="listitem">
+      <h2 class="daily-news-title">工具生态联动：Agent + RPA 组合重塑办公自动化</h2>
+      <p class="daily-news-summary">
+        传统 RPA 结合语言代理后，能处理更复杂的条件判断与异常分支。
+        新增“自然语言流程配置”降低了自动化门槛。
+      </p>
+      <div class="daily-news-detail">
+        企业开始用代理来自动生成 RPA 流程图，并在运行中自动修复失败步骤。
+        这意味着工作流可持续迭代，减少人工维护成本。
+      </div>
+      <button class="daily-news-toggle" type="button" aria-expanded="false">展开</button>
+    </article>
+
+    <article class="daily-news-item" role="listitem">
+      <h2 class="daily-news-title">生成式 UI 设计加速：组件级代理成为“设计副驾驶”</h2>
+      <p class="daily-news-summary">
+        设计代理开始支持按组件级别生成并自动对齐设计系统规范。
+        可直接输出符合工程约束的布局与样式建议。
+      </p>
+      <div class="daily-news-detail">
+        新方案将设计 token 与工程变量打通，减少设计到落地的偏差。
+        对前端团队而言，这种“可执行设计建议”更容易直接进入实现阶段。
+      </div>
+      <button class="daily-news-toggle" type="button" aria-expanded="false">展开</button>
+    </article>
+
+    <article class="daily-news-item" role="listitem">
+      <h2 class="daily-news-title">Agentic 工程实践转向“策略驱动”生成</h2>
+      <p class="daily-news-summary">
+        新趋势强调先制定策略，再交给代理执行，减少随机探索。
+        策略中包含质量门槛、回滚条件与评分指标。
+      </p>
+      <div class="daily-news-detail">
+        多团队在生成链路中加入“策略审计器”，监控每次生成是否偏离目标。
+        这使得代理输出更具一致性，也更适合企业级工程。
+      </div>
+      <button class="daily-news-toggle" type="button" aria-expanded="false">展开</button>
+    </article>
+
+    <article class="daily-news-item" role="listitem">
+      <h2 class="daily-news-title">多代理协作走向“角色化”：拆解复杂工程任务</h2>
+      <p class="daily-news-summary">
+        多角色代理分工明确：规划、实现、验证、发布各自独立。
+        新框架提供任务分解与回合控制，降低协作噪音。
+      </p>
+      <div class="daily-news-detail">
+        这种模式尤其适合跨团队协作与大型代码库改造。
+        通过角色化分工，团队能更清晰地控制责任边界与质量标准。
+      </div>
+      <button class="daily-news-toggle" type="button" aria-expanded="false">展开</button>
+    </article>
+  </div>
+</section>
